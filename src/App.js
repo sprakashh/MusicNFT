@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import web3 from './web3'
-import NFTaudioclip from './lottery'
+import NFTaudioclip from './NFThelper.js'
 import './App.css'
 import { useRef } from 'react'
 import play from './play-icon.svg';
