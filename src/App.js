@@ -57,12 +57,11 @@ function App() {
         
         var prf= await NFTaudioclip.methods.getProfit(i).call();
         var profit = web3.utils.fromWei(prf,'ether')
-        console.log(profit);
         profits.push(profit)
         
     }
     setProfit(profits)
-    console.log(meta)
+    
     setMetaDataList(meta)
     setTokenUris(uris)
     setTotalTokens(totalToken)
@@ -75,7 +74,6 @@ function App() {
   async function mint(tokenUri) {
 
     var acc = await web3.eth.getAccounts()
-    console.log(tokenUri)
     await NFTaudioclip.methods
       .MintNFT(acc[0], tokenUri)
       .send({ from: acc[0] })
@@ -87,7 +85,7 @@ function App() {
   }
   const listenMusic = async (url, index) => {
   
-    console.log(profit);
+    
     let updatedPlayItems = { ...isPlay, [index]: "loading" };
     setIsPlay(updatedPlayItems);
 
